@@ -1,3 +1,22 @@
 <h1> CODE HTML UP IN HURRRRR </h1>
 <h1>Signup#index</h1>
 <p>Find me in app/views/signup/index.html.erb</p>
+<div>
+	<button onclick="open()" id="liveLinkButton">Open handler</button>
+</div>
+<!-- The link-initialize script is loaded from the <body>, not <head> -->
+<script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+<script>
+	var open = function() {
+		Plaid.create({
+			clientName: 'demo',
+			env: 'tartan',
+			product: 'auth',
+			key: '5cab9d995d77c71b389129ee8553bf',
+			onSuccess: function(token, metadata) {
+				console.log('account_id is', metadata.account_id);
+				window.location = '/account';
+			},
+		});
+	}
+</script>
