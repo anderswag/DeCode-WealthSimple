@@ -1,0 +1,14 @@
+<div ng-app="bankAuthentication" ng-controller="MainCtrl">
+  <div>
+    {{title}}
+    <form>
+      Username
+      <input ng-model='usr' type="text"> 
+      <br>
+      Password
+      <input ng-model='pwd' type="text">
+      <br>
+      <input ng-click='sendCredentials()' type="submit">
+    </form>
+  </div>
+</div>

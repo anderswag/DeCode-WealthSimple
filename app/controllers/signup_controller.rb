@@ -13,6 +13,8 @@ class SignupController < ApplicationController
 
   end
 
+  def angular
 
+  end
 
 end
