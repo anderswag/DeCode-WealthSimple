@@ -3,12 +3,11 @@ angular.module('bankAuthentication', [])
   '$scope', '$http', '$timeout',
   function($scope, $http ,$timeout){
     $scope.title = 'Banking Authentication Service';
-    $scope.bankName = '';
-    $scope.usr = '';
-    $scope.pwd = '';
+    $scope.bankName = 'wells';
+    $scope.usr = 'plaid_test';
+    $scope.pwd = 'plaid_good';
     $scope.http = $http;
     $scope.endpoint = "http://localhost:3000/signup/authenticate";
-    $scope.errorMessage = "Incorrect credentials, try again";
     $scope.showError = false;
     $scope.modals= {modal1: false, modal2: false, modal3: false};
 
@@ -48,10 +47,13 @@ angular.module('bankAuthentication', [])
     };
 
     $scope.sendCredentials = function() {
-      if ($scope.bankName != '' && $scope.usr != '' && $scope.pwd != '') {
+      //if ($scope.bankName != '' && $scope.usr != '' && $scope.pwd != '') {
         var data = { bank: $scope.bankName, username: $scope.usr, password: $scope.pwd };
         $http.post($scope.endpoint, data).then(function (data) {
             console.log(data);
+
+          $scope.closeModal1();
+          $scope.showModal2();
             if (data.data.thing != null) {
               console.log(data);
             } 
@@ -59,9 +61,7 @@ angular.module('bankAuthentication', [])
         function(err) {
           $scope.showError = true;
         })
-      }
-      $scope.closeModal1();
-      $scope.showModal2();
+      //}
     };
 
     $scope.pickAccount = function() {
