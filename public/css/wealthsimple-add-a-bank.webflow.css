@@ -346,7 +346,7 @@
 }
 
 .bank-modal-success {
-  display: block;
+  display: none;
 }
 
 .you-have {
