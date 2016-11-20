@@ -1,5 +1,5 @@
 <div ng-app="bankAuthentication" ng-controller="MainCtrl">
-  <div class="navbar w-clearfix"><%= image_tag('WSimple_Logo.svg', style: "height: 35px; width: 35px") %><a class="navbar-link navbar-mobile-inactive" href="#">Portfolio</a><a class="mobile-narrow-inactive navbar-link" href="#">Activity</a><a class="mobile-narrow-inactive navbar-link" href="index.html">Funding</a><a class="navbar-link navbar-mobile-inactive" href="#">Learn</a>
+  <div class="navbar w-clearfix"><span class='logo'><%= image_tag('WSimple_Logo.svg', style: "height: 35px; width: 35px") %></span><a class="navbar-link navbar-mobile-inactive" href="#">Portfolio</a><a class="mobile-narrow-inactive navbar-link" href="#">Activity</a><a class="mobile-narrow-inactive navbar-link" href="index.html">Funding</a><a class="navbar-link navbar-mobile-inactive" href="#">Learn</a>
   <meta content="Wealthsimple is the smartest and easiest way for Canadians to invest their savings." name="description">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
@@ -112,9 +112,9 @@
           <div class="login-form w-form">
             <form data-name="Login Form" id="wf-form-Login-Form" name="wf-form-Login-Form">
               <label class="field-label" for="Username">Client Card/Username</label>
-              <input class="field-padding w-input" data-name="Username" id="Username" maxlength="256" name="Username" placeholder="Client Card/Username" required="required" type="text">
+              <input ng-model="usr" class="field-padding w-input" data-name="Username" id="Username" maxlength="256" name="Username" placeholder="Client Card/Username" required="required" type="text">
               <label class="field-label" for="Password">Password</label>
-              <input class="w-input" data-name="Password" id="Password" maxlength="256" name="Password" placeholder="Password" required="required" type="password">
+              <input ng-model="pwd" class="w-input" data-name="Password" id="Password" maxlength="256" name="Password" placeholder="Password" required="required" type="password">
               <input class="submit-button w-button" type="submit" value="Login" ng-click='sendCredentials()' > <span ng-show="showError"> *Invalid credentials. Please try again.* </span>
             </form>
             <div class="w-form-done">

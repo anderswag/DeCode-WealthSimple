@@ -4,8 +4,8 @@ angular.module('bankAuthentication', [])
   function($scope, $http ,$timeout){
     $scope.title = 'Banking Authentication Service';
     $scope.bankName = 'wells';
-    $scope.usr = 'plaid_test';
-    $scope.pwd = 'plaid_good';
+    $scope.usr = '';
+    $scope.pwd = '';
     $scope.http = $http;
     $scope.endpoint = "http://localhost:3000/signup/authenticate";
     $scope.showError = false;
@@ -60,7 +60,7 @@ angular.module('bankAuthentication', [])
           },
         function(err) {
           $scope.showError = true;
-          alert('Check credentials')
+          // alert('Check credentials')
         })
       //}
     };
