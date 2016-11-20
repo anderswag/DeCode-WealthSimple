@@ -95,14 +95,16 @@
     </div>
   </div>
   <div class="footer"></div>
-    <div ng-show="modals.modal1" class="bank-modal login">
+    <div ng-show="modals.modal1" class="bank-modal choose-account" >
       <div class="close-modal-bg" data-ix="close-modal-login"></div>
       <div class="bank-modal-container">
         <div class="bank-modal-header w-clearfix">
-          <div class="close-modal" ng-click='closeModal1()'>
-            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+          <div class="close-modal">
+            <a ng-click="closeModal1()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
-          </div><%= image_tag('Capital-One-SVG.svg', style: "width: 120px") %>>
+          </div><div class="bank-modal-header-logo">
+            <%= image_tag('Capital-One-SVG.svg') %>
+          </div>
         </div>
         <div class="bank-modal-container-content">
           <h1 class="h1-title">Enter your login details</h1>
@@ -113,7 +115,7 @@
               <input class="field-padding w-input" data-name="Username" id="Username" maxlength="256" name="Username" placeholder="Client Card/Username" required="required" type="text">
               <label class="field-label" for="Password">Password</label>
               <input class="w-input" data-name="Password" id="Password" maxlength="256" name="Password" placeholder="Password" required="required" type="password">
-              <input class="submit-button w-button" type="submit" value="Login" ng-click='sendCredentials()' >
+              <input class="submit-button w-button" type="submit" value="Login" ng-click='sendCredentials()' > <span ng-show="showError"> *Invalid credentials. Please try again.* </span>
             </form>
             <div class="w-form-done">
               <div>Thank you! Your submission has been received!</div>
@@ -124,14 +126,13 @@
           </div>
         </div>
       </div>
-      <div class="bank-modal-login"></div>
     </div>
     <div ng-show="modals.modal2" class="bank-modal choose-account" >
       <div class="close-modal-bg" data-ix="close-modal-login"></div>
       <div class="bank-modal-container">
         <div class="bank-modal-header w-clearfix">
           <div class="close-modal">
-            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            <a ng-click="closeModal2()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
           </div><div class="bank-modal-header-logo">
             <%= image_tag('Capital-One-SVG.svg') %>
@@ -152,7 +153,7 @@
                 <label class="account-details w-form-label" for="checkbox-3">Savings ***876</label>
                 <div class="account-amount account-details">$50,000.00</div>
               </div>
-              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Continue" ng-click='pickAccount()'><a class="cancel-button w-button" href="#">Back</a>
+              <input  class="submit-button w-button" data-wait="Please wait..." type="submit" value="Continue" ng-click='pickAccount()'><a ng-click="closeModal2(); showModal1();" class="cancel-button w-button" href="#">Back</a>
             </form>
             <div class="w-form-done">
               <div>Thank you! Your submission has been received!</div>
@@ -169,7 +170,7 @@
       <div class="bank-modal-container">
         <div class="bank-modal-header w-clearfix">
           <div class="close-modal">
-            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            <a ng-click="closeModal3()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
           </div><div class="bank-modal-header-logo">
             <%= image_tag('Capital-One-SVG.svg') %>
@@ -184,7 +185,7 @@
             <form data-name="Login Form" id="wf-form-Login-Form" name="wf-form-Login-Form">
               <label class="field-label" for="Amount">Chequing ***133</label>
               <input class="enter-amount field-padding w-input" data-name="Amount" id="Amount" maxlength="256" name="Amount" placeholder="$CAD Enter Amount" required="required" type="text">
-              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Continue" ng-click="submitMoney()">
+              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Continue" ng-click="submitMoney()"><a ng-click="closeModal3(); showModal2();" class="cancel-button w-button" href="#">Back</a>
             </form>
             <div class="w-form-done">
               <div>Thank you! Your submission has been received!</div>
@@ -201,7 +202,7 @@
       <div class="bank-modal-container">
         <div class="bank-modal-header w-clearfix">
           <div class="close-modal">
-            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            <a ng-click="closeModal4()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
           </div><div class="bank-modal-header-logo">
             <%= image_tag('Capital-One-SVG.svg') %>
@@ -210,7 +211,7 @@
         <div class="bank-modal-container-content">
           <div class="bank-modal-header w-clearfix">
           <div class="close-modal">
-            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            <a ng-click="closeModal4()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
           </div><div class="bank-modal-header-logo">
               <%= image_tag('Capital-One-SVG.svg') %>
