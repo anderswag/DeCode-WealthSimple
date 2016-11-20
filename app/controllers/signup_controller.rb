@@ -10,13 +10,13 @@ class SignupController < ApplicationController
       p.env = :tartan  # or :production
     end
 
-    user = Plaid::User.create(:connect, 'wells', 'plaid_test', 'plaid_good')
+    user = params[:username]
+    pass = params[:password]
+    bank = params[:bank]
 
-    if user
-      render json: {thing: user}
-      else
-      render json:{thing: 'error'}
-    end
+    userData = Plaid::User.create(:connect, bank, user, pass)
+
+    render json: {thing: userData}
 
   end
 

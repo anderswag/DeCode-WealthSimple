@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'signup/index'
 
-  get 'signup/authenticate', to: 'signup#authenticate'
+  post 'signup/authenticate', to: 'signup#authenticate'
 
   root to: 'signup#angular'
 

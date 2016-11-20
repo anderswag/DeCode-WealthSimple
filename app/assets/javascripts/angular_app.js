@@ -3,21 +3,23 @@ angular.module('bankAuthentication', [])
   '$scope', '$http',
   function($scope, $http){
     $scope.title = 'Banking Authentication Service';
+    $scope.bankName = '';
     $scope.usr = '';
     $scope.pwd = '';
     $scope.http = $http;
-    $scope.endpoint = "http://google.ca"
+    $scope.endpoint = "http://localhost:3000/signup/authenticate"
     
     $scope.sendCredentials = function() {
-      var username = $scope.usr;
-      var password = $scope.pwd;
-      var http = $scope.http;
-      http.get($scope.endpoint).then(function (data) {
-        console.log(data);
-      },
-      function(err) {
-        console.log(data);
+      if ($scope.bankName != '' && $scope.usr != '' && $scope.pwd != '') {
+        var data = { bank: $scope.bankName, username: $scope.usr, password: $scope.pwd };
+        $http.post($scope.endpoint, data).then(function (data) {
+            if (data.data.thing != null) {
+              console.log(data);
+            } 
+          },
+        function(err) {
+          alert("Could not find accounts, please try again");
+        })
       }
-      )
     }
 }]);

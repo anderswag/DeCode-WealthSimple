@@ -7,7 +7,7 @@ window.onload = function () {
 	  $scope.usr = '';
 	  $scope.pwd = '';
 	  $scope.http = $http;
-	  $scope.endpoint = "http://google.ca"
+	  $scope.endpoint = "http://localhost:3000/authentication"
 	  
 	  $scope.sendCredentials = function() {
 	  	var username = $scope.usr;
