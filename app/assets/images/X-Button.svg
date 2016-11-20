@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>X Button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Add-Bank" transform="translate(-963.000000, -281.000000)" stroke="#FFFFFF">
+            <g id="Modal" transform="translate(-4.000000, -13.000000)">
+                <g id="X" transform="translate(960.000000, 285.000000)">
+                    <g id="X-Button" transform="translate(8.000000, 9.000000)">
+                        <path d="M0.461767702,0.461767702 L13.5588317,13.5588317" id="Line"></path>
+                        <path d="M13.5382323,0.461767702 L0.441168346,13.5588317" id="Line"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,19 +1,226 @@
 <div ng-app="bankAuthentication" ng-controller="MainCtrl">
-  <div>
-    {{title}}
-    <form>
-      Choose the bank
-      <select ng-model='bankName' required>
-        <option value='wells'>Wells Fargo</option>
-      </select>
-      <br>
-      Username
-      <input ng-model='usr' type="text" required> 
-      <br>
-      Password
-      <input ng-model='pwd' type="password" required>
-      <br>
-      <input ng-click='sendCredentials()' type="submit">
-    </form>
+  <div class="navbar w-clearfix"><%= image_tag('WSimple_Logo.svg', style: "height: 35px; width: 35px") %><a class="navbar-link navbar-mobile-inactive" href="#">Portfolio</a><a class="mobile-narrow-inactive navbar-link" href="#">Activity</a><a class="mobile-narrow-inactive navbar-link" href="index.html">Funding</a><a class="navbar-link navbar-mobile-inactive" href="#">Learn</a>
+  <meta content="Wealthsimple is the smartest and easiest way for Canadians to invest their savings." name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/wealthsimple-add-a-bank.webflow.css" rel="stylesheet" type="text/css">
+  <script src="js/modernizr.js" type="text/javascript"></script>
+  <link href="images/favicon-32x32.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/favicon-256x256.png" rel="apple-touch-icon">
+    <div class="user-account-float"><a class="navbar-link user-account" href="#">User Account</a><img src="images/Chevron_Down.svg">
+    </div>
   </div>
+  <div class="add-bank-account">
+    <div class="container w-container">
+      <h1 class="h1-title">Add a bank account</h1>
+      <h2 class="h2-description">Link another bank account with Wealthsimple to securely transfer funds. Your credentials are not shared or stored.</h2>
+      <div class="search-bank-div">
+        <div class="search-bank w-form">
+          <form data-name="Search for your bank" id="wf-form-Search-for-your-bank" name="wf-form-Search-for-your-bank">
+            <input class="search-bank-field w-input" data-name="Search for your bank" id="Search-for-your-bank" maxlength="256" name="Search-for-your-bank" placeholder="Search for your bank" type="text">
+          </form>
+          <div class="w-form-done">
+            <div>Thank you! Your submission has been received!</div>
+          </div>
+          <div class="w-form-fail">
+            <div>Oops! Something went wrong while submitting the form</div>
+          </div>
+        </div>
+      </div>
+      <div class="w-row">
+        <div class="column-centered w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
+          <a class="activate-model w-inline-block" data-ix="open-modal" href="#">
+            <div class="tile-block">
+              <div class="bank" data-ix="open-modal">
+                <div class="bank-name">
+                  <div class="bank-title">Capital One</div>
+                </div>
+                <div class="bank-logo"><%= image_tag('Capital-One-SVG.svg', style: "width: 120px") %>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="column-centered w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
+          <a class="activate-model w-inline-block" href="#">
+            <div class="tile-block">
+              <div class="bank td-bank">
+                <div class="bank-name">
+                  <div class="bank-title">TD Bank</div>
+                </div>
+                <div class="bank-logo"><%= image_tag('TD_Canada_Trust-white.svg', style: "width: 120px") %>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="column-centered w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
+          <a class="activate-model w-inline-block" href="#">
+            <div class="tile-block">
+              <div class="bank">
+                <div class="bank-name">
+                  <div class="bank-title">Capital One</div>
+                </div>
+                <div class="bank-logo"><%= image_tag('Capital-One-SVG.svg', style: "width: 120px") %>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="column-centered w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
+          <a class="activate-model w-inline-block" href="#">
+            <div class="tile-block">
+              <div class="bank">
+                <div class="bank-name">
+                  <div class="bank-title">Capital One</div>
+                </div>
+                <div class="bank-logo"><%= image_tag('Capital-One-SVG.svg', style: "width: 120px") %>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a class="another-link-block w-inline-block" href="#">
+        <div class="another-bank-div w-clearfix"><img class="orange-chevron" src="images/orange-right-cheveron.svg">
+          <div class="another-bank-button">I'm with another bank</div>
+        </div>
+      </a>
+      <div class="encryption-message">
+        <div class="encryption-description">Wealthsimple uses 128-bit SSL encryption (same as most banks) to process your information. We never use your information for anything other than account verification.</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"></div>
+  <div class="bank-modal-login" data-ix="modal-opacity">
+    <div class="bank-modal login">
+      <div class="close-modal-bg" data-ix="close-modal-login"></div>
+      <div class="bank-modal-container">
+        <div class="bank-modal-header w-clearfix">
+          <div class="close-modal">
+            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg', style: "width: 120px") %>
+            </a>
+          </div><%= image_tag('Capital-One-SVG.svg', style: "width: 120px") %>>
+        </div>
+        <div class="bank-modal-container-content">
+          <h1 class="h1-title">Enter your login details</h1>
+          <h2 class="h2-description">Log in to your <span class="bold">Capital One</span> account the same way you would your online banking. Once you successfully log in, you’ll be asked to choose the account to transfer funds to and from Wealthsimple.</h2>
+          <div class="login-form w-form">
+            <form data-name="Login Form" id="wf-form-Login-Form" name="wf-form-Login-Form">
+              <label class="field-label" for="Username">Client Card/Username</label>
+              <input class="field-padding w-input" data-name="Username" id="Username" maxlength="256" name="Username" placeholder="Client Card/Username" required="required" type="text">
+              <label class="field-label" for="Password">Password</label>
+              <input class="w-input" data-name="Password" id="Password" maxlength="256" name="Password" placeholder="Password" required="required" type="password">
+              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Login">
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bank-modal-login"></div>
+    </div>
+  </div>
+  <div class="bank-modal-account">
+    <div class="bank-modal choose-account" data-ix="modal-opacity">
+      <div class="close-modal-bg" data-ix="close-modal-login"></div>
+      <div class="bank-modal-container">
+        <div class="bank-modal-header w-clearfix">
+          <div class="close-modal">
+            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            </a>
+          </div><div class="bank-modal-header-logo">
+            <%= image_tag('Capital-One-SVG.svg') %>
+          </div>
+        </div>
+        <div class="bank-modal-container-content">
+          <h1 class="h1-title">Choose an account</h1>
+          <h2 class="h2-description">Select the account you would like to fund your investments with.</h2>
+          <div class="login-form w-form">
+            <form data-name="Login Form" id="wf-form-Login-Form" name="wf-form-Login-Form">
+              <div class="checkbox-account w-checkbox w-clearfix">
+                <input class="w-checkbox-input" data-name="Checkbox" id="checkbox" name="checkbox" type="checkbox">
+                <label class="account-details w-form-label" for="checkbox">Chequing ***133</label>
+                <div class="account-amount account-details">$12,435.67</div>
+              </div>
+              <div class="checkbox-account w-checkbox w-clearfix">
+                <input class="w-checkbox-input" data-name="Checkbox 3" id="checkbox-3" name="checkbox-3" type="checkbox">
+                <label class="account-details w-form-label" for="checkbox-3">Savings ***876</label>
+                <div class="account-amount account-details">$50,000.00</div>
+              </div>
+              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Continue"><a class="cancel-button w-button" href="#">Back</a>
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bank-modal-amount">
+    <div class="bank-modal deposit-amount" data-ix="modal-opacity">
+      <div class="close-modal-bg" data-ix="close-modal-login"></div>
+      <div class="bank-modal-container" data-ix="new-interaction">
+        <div class="bank-modal-header w-clearfix">
+          <div class="close-modal">
+            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            </a>
+          </div><div class="bank-modal-header-logo">
+              <%= image_tag('Capital-One-SVG.svg') %>
+            </div>
+        </div>
+        <div class="bank-modal-container-content">
+          <h1 class="h1-title">Select the amount of money you would like transferred to you account</h1>
+          <h2 class="h2-description">No fees are applied on amounts under $10,000.</h2>
+          <div class="you-have">You have</div>
+          <div class="selected-account-amount">$3540.00</div>
+          <div class="login-form w-form">
+            <form data-name="Login Form" id="wf-form-Login-Form" name="wf-form-Login-Form">
+              <label class="field-label" for="Amount">Chequing ***133</label>
+              <input class="enter-amount field-padding w-input" data-name="Amount" id="Amount" maxlength="256" name="Amount" placeholder="$CAD Enter Amount" required="required" type="text">
+              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Continue">
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bank-modal-success">
+    <div class="bank-modal success" data-ix="modal-opacity">
+      <div class="close-modal-bg" data-ix="close-modal-login"></div>
+      <div class="bank-modal-container" data-ix="new-interaction">
+        <div class="bank-modal-header w-clearfix">
+          <div class="close-modal">
+            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            </a>
+          </div><div class="bank-modal-header-logo">
+              <%= image_tag('Capital-One-SVG.svg') %>
+            </div>
+        </div>
+        <div class="bank-modal-container-content">
+          <h1 class="h1-title">Success!</h1>
+          <h2 class="h2-description">$3500.00 will be deposited into your account in 3-5 business days.<br><br>It will be withdrawn from <span class="bold">Capital One Chequing ***335</span>.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </div>

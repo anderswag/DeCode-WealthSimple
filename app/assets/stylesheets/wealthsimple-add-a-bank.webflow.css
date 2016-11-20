@@ -1,0 +1,497 @@
+.body {
+  background-color: #f9f8f7;
+  background-image: -webkit-linear-gradient(270deg, #f9f8f7, #f9f8f7);
+  background-image: linear-gradient(180deg, #f9f8f7, #f9f8f7);
+  font-family: Futura, sans-serif;
+  font-weight: 500;
+}
+
+.add-bank-account {
+  min-height: 900px;
+  background-color: #f9f8f7;
+  background-image: -webkit-linear-gradient(270deg, #f9f8f7, #f9f8f7);
+  background-image: linear-gradient(180deg, #f9f8f7, #f9f8f7);
+}
+
+.navbar {
+  position: relative;
+  z-index: 5;
+  background-color: #fff;
+  box-shadow: 0 0 2px 0 #b0b0b0;
+}
+
+.footer {
+  height: 75px;
+  background-color: #928a84;
+}
+
+.h2-description {
+  margin-top: 0px;
+  font-family: 'Futura PT Book', sans-serif;
+  color: #737373;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 0.1px;
+}
+
+.h1-title {
+  margin-bottom: 10px;
+  font-family: 'Futura PT', sans-serif;
+  color: #000;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 900;
+  text-align: left;
+}
+
+.logo {
+  margin-top: -5px;
+  margin-right: 20px;
+  margin-left: 20px;
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+.navbar-link {
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 25px;
+  margin-bottom: 30px;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+  color: #7f7f7f;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  color: #000;
+}
+
+.navbar-link.user-account {
+  margin-right: 5px;
+  float: none;
+}
+
+.navbar-link.mobile-narrow-inactive {
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+.navbar-link.mobile-narrow-inactive.w--current {
+  color: #000;
+}
+
+.user-account {
+  display: inline-block;
+  float: right;
+}
+
+.user-account-float {
+  display: inline-block;
+  margin-right: 20px;
+  float: right;
+}
+
+.bank {
+  width: 180px;
+  height: 180px;
+  background-color: #092869;
+  box-shadow: 0 0 6px 0 #d5d5d5;
+  text-align: center;
+}
+
+.bank.td-bank {
+  background-color: #2fb457;
+}
+
+.bank-name {
+  position: absolute;
+  bottom: 0px;
+  width: 180px;
+  background-color: #fff;
+}
+
+.encryption-message {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.encryption-description {
+  font-family: 'Futura PT Book', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.bank-title {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: 'Futura PT Book', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.search-bank {
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+.search-bank-field {
+  width: 330px;
+  height: 50px;
+  margin-bottom: 0px;
+}
+
+.search-bank-div {
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.bank-logo {
+  position: relative;
+  top: 40%;
+  -webkit-transform: translate(0px, -60%);
+  -ms-transform: translate(0px, -60%);
+  transform: translate(0px, -60%);
+}
+
+.column-centered {
+  text-align: center;
+}
+
+.tile-block {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.tile-block:hover {
+  -webkit-transform: translate(0px, -5px);
+  -ms-transform: translate(0px, -5px);
+  transform: translate(0px, -5px);
+}
+
+.activate-model {
+  color: #000;
+}
+
+.bank-modal {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+  display: block;
+  height: 100vh;
+  text-align: center;
+}
+
+.bank-modal.choose-account {
+  display: none;
+}
+
+.bank-modal-container {
+  position: relative;
+  z-index: 12;
+  display: inline-block;
+  width: 550px;
+  background-color: #f9f8f7;
+  -webkit-transform: translate(0px, 30%);
+  -ms-transform: translate(0px, 30%);
+  transform: translate(0px, 30%);
+}
+
+.bank-modal-header {
+  height: 110px;
+  background-color: #092869;
+}
+
+.bank-modal-header-logo {
+  margin: 47px;
+}
+
+.bank-modal-container-content {
+  margin: 25px 60px 40px;
+}
+
+.bold {
+  font-family: 'Futura PT', sans-serif;
+  font-weight: 600;
+}
+
+.login-form {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.submit-button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  border-radius: 100px;
+  background-color: #fab131;
+}
+
+.field-label {
+  font-family: 'Futura PT', sans-serif;
+  color: #7cb7b6;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 15px;
+  float: right;
+}
+
+.close-modal-bg {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.another-bank-div {
+  text-align: center;
+}
+
+.another-bank-button {
+  display: inline-block;
+  font-family: 'Futura PT Book', sans-serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.orange-chevron {
+  display: inline-block;
+  padding-top: 3px;
+  float: right;
+}
+
+.another-link-block {
+  display: block;
+  margin-top: 40px;
+  padding: 25px;
+  background-color: #fff;
+}
+
+html.w-mod-js *[data-ix="modal-opacity"] {
+  display: none;
+  opacity: 0;
+}
+
+@media (max-width: 991px) {
+  .encryption-message {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .navbar-link.navbar-mobile-inactive {
+    display: none;
+  }
+  .search-bank-field {
+    display: block;
+  }
+}
+
+@media (max-width: 479px) {
+  .logo {
+    margin: 20px;
+  }
+  .navbar-link.mobile-narrow-inactive {
+    display: none;
+  }
+  .search-bank-field {
+    width: 100%;
+  }
+}
+
+@font-face {
+  font-family: 'CaslonGraD';
+  src: url('../fonts/ufonts.com_caslongrad.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura Condensed';
+  src: url('../fonts/Futura-CondensedExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/Futura-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/Futura-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura Condensed';
+  src: url('../fonts/Futura-CondensedMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/Futura-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTHeavyOblique.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT Book';
+  src: url('../fonts/FuturaPTBook.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT Condensed Book';
+  src: url('../fonts/FuturaPTCondBook.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTLightOblique.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTBoldOblique.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT Condensed Oblique';
+  src: url('../fonts/FuturaPTCondExtraBoldOblique.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTDemiOblique.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT Condensed';
+  src: url('../fonts/FuturaPTCondMediumOblique.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT Condensed';
+  src: url('../fonts/FuturaPTCondBoldOblique.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT Condensed';
+  src: url('../fonts/FuturaPTCondMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTDemi.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT Book';
+  src: url('../fonts/FuturaPTBookOblique.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT Condensed Book';
+  src: url('../fonts/FuturaPTCondBookOblique.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTBold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT Condensed';
+  src: url('../fonts/FuturaPTCondExtraBold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTExtraBoldOblique.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTMediumOblique.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Futura PT Condensed';
+  src: url('../fonts/FuturaPTCondBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPTHeavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
