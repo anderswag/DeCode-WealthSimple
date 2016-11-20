@@ -6,6 +6,41 @@
   font-weight: 500;
 }
 
+.td-bank{
+background-color: #2fb457 !important;
+}
+
+.td-bank .modal-logo img{
+  width:200px !important;
+}
+
+.wellsfargo{
+background-color: #CD1309 !important;
+}
+
+.secondWells{
+
+}
+.secondWells .modal-logo img{
+  width:130px !important;
+  margin-top: -20px;
+}
+
+.wellsfargo .modal-logo img{
+  width:130px !important;
+  margin-top: -20px;
+}
+
+
+
+.bankamerica{
+background-color: #D4001A !important;
+}
+
+.bankamerica .modal-logo img{
+  width:200px !important;
+}
+
 .add-bank-account {
   min-height: 900px;
   background-color: #f9f8f7;
@@ -213,7 +248,7 @@
 
 .bank-modal-header {
   height: 110px;
-  background-color: #092869;
+  background-color: #CD1309;
 }
 
 .bank-modal-header-logo {
