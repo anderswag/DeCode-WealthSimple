@@ -7,7 +7,7 @@
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/wealthsimple-add-a-bank.webflow.css" rel="stylesheet" type="text/css">
   <script src="js/modernizr.js" type="text/javascript"></script>
-  <script src="js/modal.js" type="text/javascript"></script>
+  <!-- <script src="js/modal.js" type="text/javascript"></script> -->
   <link href="images/favicon-32x32.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/favicon-256x256.png" rel="apple-touch-icon">
     <div class="user-account-float"><a class="navbar-link user-account" href="#">User Account</a><img src="images/Chevron_Down.svg">
@@ -34,7 +34,7 @@
         <div class="column-centered w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
           <a class="activate-model w-inline-block" data-ix="open-modal" href="#">
             <div class="tile-block">
-              <div class="bank" data-ix="open-modal">
+              <div class="bank" ng-click="showModal1(); setBank('capone360')" data-ix="open-modal" >
                 <div class="bank-name">
                   <div class="bank-title">Capital One</div>
                 </div>
@@ -47,7 +47,7 @@
         <div class="column-centered w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
           <a class="activate-model w-inline-block" href="#">
             <div class="tile-block">
-              <div class="bank td-bank">
+              <div class="bank td-bank" ng-click="showModal1(); setBank('td')">
                 <div class="bank-name">
                   <div class="bank-title">TD Bank</div>
                 </div>
@@ -60,9 +60,9 @@
         <div class="column-centered w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
           <a class="activate-model w-inline-block" href="#">
             <div class="tile-block">
-              <div class="bank">
+              <div class="bank" ng-click="showModal1(); setBank('wells')">
                 <div class="bank-name">
-                  <div class="bank-title">Capital One</div>
+                  <div class="bank-title">Wells Fargo</div>
                 </div>
                 <div class="bank-logo"><%= image_tag('Capital-One-SVG.svg', style: "width: 120px") %>
                 </div>
@@ -95,13 +95,12 @@
     </div>
   </div>
   <div class="footer"></div>
-  <div class="bank-modal-login" data-ix="modal-opacity">
-    <div class="bank-modal login">
+    <div ng-show="modals.modal1" class="bank-modal login">
       <div class="close-modal-bg" data-ix="close-modal-login"></div>
       <div class="bank-modal-container">
         <div class="bank-modal-header w-clearfix">
-          <div class="close-modal">
-            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg', style: "width: 120px") %>
+          <div class="close-modal" ng-click='closeModal1()'>
+            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
           </div><%= image_tag('Capital-One-SVG.svg', style: "width: 120px") %>>
         </div>
@@ -114,7 +113,7 @@
               <input class="field-padding w-input" data-name="Username" id="Username" maxlength="256" name="Username" placeholder="Client Card/Username" required="required" type="text">
               <label class="field-label" for="Password">Password</label>
               <input class="w-input" data-name="Password" id="Password" maxlength="256" name="Password" placeholder="Password" required="required" type="password">
-              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Login">
+              <input class="submit-button w-button" type="submit" value="Login" ng-click='sendCredentials()' >
             </form>
             <div class="w-form-done">
               <div>Thank you! Your submission has been received!</div>
@@ -127,9 +126,7 @@
       </div>
       <div class="bank-modal-login"></div>
     </div>
-  </div>
-  <div class="bank-modal-account">
-    <div class="bank-modal choose-account" data-ix="modal-opacity">
+    <div ng-show="modals.modal2" class="bank-modal choose-account" >
       <div class="close-modal-bg" data-ix="close-modal-login"></div>
       <div class="bank-modal-container">
         <div class="bank-modal-header w-clearfix">
@@ -155,7 +152,7 @@
                 <label class="account-details w-form-label" for="checkbox-3">Savings ***876</label>
                 <div class="account-amount account-details">$50,000.00</div>
               </div>
-              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Continue"><a class="cancel-button w-button" href="#">Back</a>
+              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Continue" ng-click='pickAccount()'><a class="cancel-button w-button" href="#">Back</a>
             </form>
             <div class="w-form-done">
               <div>Thank you! Your submission has been received!</div>
@@ -167,8 +164,65 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="bank-modal-amount">
+    <div ng-show="modals.modal3" class="bank-modal choose-account" >
+      <div class="close-modal-bg" data-ix="close-modal-login"></div>
+      <div class="bank-modal-container">
+        <div class="bank-modal-header w-clearfix">
+          <div class="close-modal">
+            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            </a>
+          </div><div class="bank-modal-header-logo">
+            <%= image_tag('Capital-One-SVG.svg') %>
+          </div>
+        </div>
+        <div class="bank-modal-container-content">
+          <h1 class="h1-title">Select the amount of money you would like transferred to you account</h1>
+          <h2 class="h2-description">No fees are applied on amounts under $10,000.</h2>
+          <div class="you-have">You have</div>
+          <div class="selected-account-amount">$3540.00</div>
+          <div class="login-form w-form">
+            <form data-name="Login Form" id="wf-form-Login-Form" name="wf-form-Login-Form">
+              <label class="field-label" for="Amount">Chequing ***133</label>
+              <input class="enter-amount field-padding w-input" data-name="Amount" id="Amount" maxlength="256" name="Amount" placeholder="$CAD Enter Amount" required="required" type="text">
+              <input class="submit-button w-button" data-wait="Please wait..." type="submit" value="Continue" ng-click="submitMoney()">
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="modals.modal4" class="bank-modal choose-account" >
+      <div class="close-modal-bg" data-ix="close-modal-login"></div>
+      <div class="bank-modal-container">
+        <div class="bank-modal-header w-clearfix">
+          <div class="close-modal">
+            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            </a>
+          </div><div class="bank-modal-header-logo">
+            <%= image_tag('Capital-One-SVG.svg') %>
+          </div>
+        </div>
+        <div class="bank-modal-container-content">
+          <div class="bank-modal-header w-clearfix">
+          <div class="close-modal">
+            <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            </a>
+          </div><div class="bank-modal-header-logo">
+              <%= image_tag('Capital-One-SVG.svg') %>
+            </div>
+        </div>
+        <div class="bank-modal-container-content">
+          <h1 class="h1-title">Success!</h1>
+          <h2 class="h2-description">$3500.00 will be deposited into your account in 3-5 business days.<br><br>It will be withdrawn from <span class="bold">Capital One Chequing ***335</span>.</h2>
+        </div>
+        </div>
+      </div>
+    </div>
     <div class="bank-modal deposit-amount" data-ix="modal-opacity">
       <div class="close-modal-bg" data-ix="close-modal-login"></div>
       <div class="bank-modal-container" data-ix="new-interaction">
@@ -201,7 +255,6 @@
         </div>
       </div>
     </div>
-  </div>
   <div class="bank-modal-success">
     <div class="bank-modal success" data-ix="modal-opacity">
       <div class="close-modal-bg" data-ix="close-modal-login"></div>
