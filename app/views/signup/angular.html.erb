@@ -60,11 +60,11 @@
         <div class="column-centered w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
           <a class="activate-model w-inline-block" href="#">
             <div class="tile-block">
-              <div class="bank" ng-click="showModal1(); setBank('wells')">
+              <div class="bank wellsfargo" ng-click="showModal1(); setBank('wells')">
                 <div class="bank-name">
                   <div class="bank-title">Wells Fargo</div>
                 </div>
-                <div class="bank-logo"><%= image_tag('Capital-One-SVG.svg', style: "width: 120px") %>
+                <div class="bank-logo"><%= image_tag('WELLS FARGO Logo.svg', style: "width: 120px") %>
                 </div>
               </div>
             </div>
@@ -73,11 +73,11 @@
         <div class="column-centered w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
           <a class="activate-model w-inline-block" href="#">
             <div class="tile-block">
-              <div class="bank">
+              <div class="bank bankamerica" ng-click="showModal1(); setBank('bofa')">
                 <div class="bank-name">
                   <div class="bank-title">Capital One</div>
                 </div>
-                <div class="bank-logo"><%= image_tag('Capital-One-SVG.svg', style: "width: 120px") %>
+                <div class="bank-logo"><%= image_tag('Bank_of_America_logo.svg', style: "width: 120px") %>
                 </div>
               </div>
             </div>
@@ -98,17 +98,46 @@
     <div ng-show="modals.modal1" class="bank-modal choose-account" >
       <div class="close-modal-bg" data-ix="close-modal-login"></div>
       <div class="bank-modal-container">
-        <div class="bank-modal-header w-clearfix">
+
+        <div ng-show="bankName==='td';" class="bank-modal-header w-clearfix td-bank">
           <div class="close-modal">
             <a ng-click="closeModal1()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
           </div><div class="bank-modal-header-logo">
-            <%= image_tag('Capital-One-SVG.svg') %>
+            <div ng-show="bankName==='td';" class="modal-logo"><%= image_tag('TD_Canada_Trust-white.svg') %></div>
           </div>
         </div>
+
+        <div ng-show="bankName==='capone360';" class="bank-modal-header w-clearfix">
+          <div class="close-modal">
+            <a ng-click="closeModal1()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            </a>
+          </div><div class="bank-modal-header-logo">
+            <div ng-show="bankName==='capone360';" class="modal-logo"><%= image_tag('Capital-One-SVG.svg') %></div>
+          </div>
+        </div>
+
+        <div ng-show="bankName==='wells';" class="bank-modal-header w-clearfix wellsfargo">
+          <div class="close-modal">
+            <a ng-click="closeModal1()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            </a>
+          </div><div class="bank-modal-header-logo">
+            <div ng-show="bankName==='wells';" class="modal-logo"><%= image_tag('WELLS FARGO Logo.svg') %></div>
+          </div>
+        </div>
+
+        <div ng-show="bankName==='bofa';" class="bank-modal-header w-clearfix bankamerica">
+          <div class="close-modal">
+            <a ng-click="closeModal1()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
+            </a>
+          </div><div class="bank-modal-header-logo">
+            <div ng-show="bankName==='bofa';" class="modal-logo"><%= image_tag('Bank_of_America_logo.svg') %></div>
+          </div>
+        </div>
+
         <div class="bank-modal-container-content">
           <h1 class="h1-title">Enter your login details</h1>
-          <h2 class="h2-description">Log in to your <span class="bold">Capital One</span> account the same way you would your online banking. Once you successfully log in, you’ll be asked to choose the account to transfer funds to and from Wealthsimple.</h2>
+          <h2 class="h2-description">Log in to your account the same way you would your online banking. Once you successfully log in, you’ll be asked to choose the account to transfer funds to and from Wealthsimple.</h2>
           <div class="login-form w-form">
             <form data-name="Login Form" id="wf-form-Login-Form" name="wf-form-Login-Form">
               <label class="field-label" for="Username">Client Card/Username</label>
@@ -127,6 +156,7 @@
         </div>
       </div>
     </div>
+
     <div ng-show="modals.modal2" class="bank-modal choose-account" >
       <div class="close-modal-bg" data-ix="close-modal-login"></div>
       <div class="bank-modal-container">
@@ -134,8 +164,9 @@
           <div class="close-modal">
             <a ng-click="closeModal2()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
-          </div><div class="bank-modal-header-logo">
-            <%= image_tag('Capital-One-SVG.svg') %>
+          </div>
+          <div class="bank-modal-header-logo secondWells">
+            <div class="modal-logo"><%= image_tag('WELLS FARGO Logo.svg') %></div>
           </div>
         </div>
         <div class="bank-modal-container-content">
@@ -172,8 +203,9 @@
           <div class="close-modal">
             <a ng-click="closeModal3()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
-          </div><div class="bank-modal-header-logo">
-            <%= image_tag('Capital-One-SVG.svg') %>
+          </div>
+          <div class="bank-modal-header-logo secondWells">
+            <div class="modal-logo"><%= image_tag('WELLS FARGO Logo.svg') %></div>
           </div>
         </div>
         <div class="bank-modal-container-content">
@@ -204,8 +236,8 @@
           <div class="close-modal">
             <a ng-click="closeModal4()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
-          </div><div class="bank-modal-header-logo">
-            <%= image_tag('Capital-One-SVG.svg') %>
+          </div><div class="bank-modal-header-logo secondWells">
+            <div class="modal-logo"><%= image_tag('WELLS FARGO Logo.svg') %></div>
           </div>
         </div>
         <div class="bank-modal-container-content">
@@ -213,13 +245,13 @@
           <div class="close-modal">
             <a ng-click="closeModal4()" class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
-          </div><div class="bank-modal-header-logo">
-              <%= image_tag('Capital-One-SVG.svg') %>
-            </div>
+          </div><div class="bank-modal-header-logo secondWells">
+            <div class="modal-logo"><%= image_tag('WELLS FARGO Logo.svg') %></div>
+          </div>
         </div>
         <div class="bank-modal-container-content">
           <h1 class="h1-title">Success!</h1>
-          <h2 class="h2-description">$3500.00 will be deposited into your account in 3-5 business days.<br><br>It will be withdrawn from <span class="bold">Capital One Chequing ***335</span>.</h2>
+          <h2 class="h2-description">$3500.00 will be deposited into your account in 3-5 business days.<br><br>It will be withdrawn from <span class="bold">Chequing ***335</span>.</h2>
         </div>
         </div>
       </div>
@@ -231,9 +263,9 @@
           <div class="close-modal">
             <a class="w-inline-block" data-ix="close-modal-login" href="#"><%= image_tag('X-Button.svg') %>
             </a>
-          </div><div class="bank-modal-header-logo">
-              <%= image_tag('Capital-One-SVG.svg') %>
-            </div>
+          </div><div class="bank-modal-header-logo secondWells">
+            <div class="modal-logo"><%= image_tag('WELLS FARGO Logo.svg') %></div>
+          </div>
         </div>
         <div class="bank-modal-container-content">
           <h1 class="h1-title">Select the amount of money you would like transferred to you account</h1>
