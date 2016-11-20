@@ -9,7 +9,10 @@ class SignupController < ApplicationController
       p.secret = 'bec7d76950f9edda762d9aa1eb88f8'
       p.env = :tartan  # or :production
     end
-    render json: {thing: user = Plaid::User.create(:connect, 'wells', 'plaid_test', 'plaid_good')}
+
+    user = params[:username]
+    pass = params[:password]
+    render json: {thing: user = Plaid::User.create(:connect, 'wells', user, pass)}
 
   end
 
