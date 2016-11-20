@@ -14,5 +14,5 @@
  *= require_self
  */
 
- *= require bootstrap/dist/css/bootstrap
- *= require_tree . {}
+ /*= require bootstrap/dist/css/bootstrap
+ /*= require_tree . {}
