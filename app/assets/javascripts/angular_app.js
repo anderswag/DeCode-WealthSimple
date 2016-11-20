@@ -7,7 +7,7 @@ angular.module('bankAuthentication', [])
     $scope.usr = '';
     $scope.pwd = '';
     $scope.http = $http;
-    $scope.endpoint = "http://localhost:3000/signup/authenticate";
+    $scope.endpoint = "https://decode-wealthsimple-demo.herokuapp.com/signup/authenticate";
     $scope.showError = false;
     $scope.modals= {modal1: false, modal2: false, modal3: false};
 
