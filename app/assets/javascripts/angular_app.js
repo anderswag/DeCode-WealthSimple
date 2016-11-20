@@ -22,4 +22,9 @@ angular.module('bankAuthentication', [])
         })
       }
     }
+
+    $scope.setBank = function(name) {
+      $scope.bankName = name;
+    }
+
 }]);

@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bower-rails'
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
+gem 'normalize-rails'
+gem 'modernizr-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
