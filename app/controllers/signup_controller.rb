@@ -12,7 +12,11 @@ class SignupController < ApplicationController
 
     user = params[:username]
     pass = params[:password]
-    render json: {thing: user = Plaid::User.create(:connect, 'wells', user, pass)}
+    bank = params[:bank]
+
+    userData = Plaid::User.create(:connect, bank, user, pass) 
+
+    render json: {thing: userData}
 
   end
 

@@ -2,11 +2,16 @@
   <div>
     {{title}}
     <form>
+      Choose the bank
+      <select ng-model='bankName' required>
+        <option value='wells'>Wells Fargo</option>
+      </select>
+      <br>
       Username
-      <input ng-model='usr' type="text"> 
+      <input ng-model='usr' type="text" required> 
       <br>
       Password
-      <input ng-model='pwd' type="text">
+      <input ng-model='pwd' type="password" required>
       <br>
       <input ng-click='sendCredentials()' type="submit">
     </form>
